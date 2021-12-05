@@ -1,0 +1,25 @@
+.container {
+    composes: panel from "../../App.module.css";
+    align-self: start;
+    justify-self: stretch;
+    font-size: 3.5vw;
+    padding: 10px 0 10px;
+    margin: 0;
+}
+
+.container p {
+    margin: 0;
+}
+
+.text {
+    font-size: 2.5vw;
+}
+
+.icon {
+    width: 25vw;
+    margin: 0 auto;
+}
+
+.temperature {
+    width: 30vw;
+}

@@ -1,0 +1,4 @@
+.face {
+    composes: panel from "../../App.module.css";
+    font-size: 12vw;
+}

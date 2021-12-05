@@ -1,24 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
+import SyncWeatherData from "./services/SyncWeatherData";
+import DateHelpers from "./helpers/date";
+import { selectWeatherNow } from "./store/selectors/selectWeather";
+import MainFrame from "./frames/Main";
+import Modal from "./components/Modal";
+
+import styles from "./App.module.css";
+import {
+  selectBackgroundColor,
+  selectForegroundColor,
+} from "./store/selectors/selectTheme";
 
 function App() {
+  //   const weatherNow = useSelector(selectWeatherNow);
+  //   const [isDaytime, setIsDaytime] = useState(true);
+
+  const foregroundColor = useSelector(selectForegroundColor);
+  const backgroundColor = useSelector(selectBackgroundColor);
+
+  new SyncWeatherData();
+
+  // useEffect(() => {
+  //   setIsDaytime(
+  //     DateHelpers.isDaytime(weatherNow.sun.sunrise, weatherNow.sun.sunset)
+  //   );
+  // }, [weatherNow]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={styles.container}
+      style={{
+        background: backgroundColor,
+        color: foregroundColor,
+      }}
+    >
+      <Modal>
+        <MainFrame />
+      </Modal>
     </div>
   );
 }

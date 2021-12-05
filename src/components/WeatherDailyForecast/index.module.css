@@ -1,0 +1,14 @@
+.containerLandscape {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.containerPortrait {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: space-between;
+    justify-items: stretch;
+    align-items: stretch;
+}

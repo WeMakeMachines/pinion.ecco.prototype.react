@@ -1,0 +1,26 @@
+.container {
+    composes: panel from "../../App.module.css";
+    font-size: 6vw;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    position: relative;
+    width: 50%;
+}
+
+.secondaryIcon {
+    position: absolute;
+    width: 50%;
+    bottom: 30px;
+    right: 0;
+}
+
+.summary {
+    width: 50%;
+}
