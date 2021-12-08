@@ -37,6 +37,16 @@ export default function Daily({
           actual={temperature.day.actual}
           units={temperature.day.units}
         />
+        <div className={styles.temperatureMinMax}>
+          <Temperature
+            actual={temperature.max.actual}
+            units={temperature.max.units}
+          />
+          <Temperature
+            actual={temperature.min.actual}
+            units={temperature.min.units}
+          />
+        </div>
       </div>
     </div>
   );

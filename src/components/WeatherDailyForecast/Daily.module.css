@@ -21,5 +21,11 @@
 }
 
 .temperature {
-    width: 30vw;
+    display: flex;
+    flex-grow: 2;
+}
+
+.temperatureMinMax {
+    flex-grow: 1;
+    font-size: 2vw;
 }
